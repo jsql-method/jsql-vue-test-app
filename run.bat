@@ -1,0 +1,1 @@
+grunt copy-hash && npm run build && grunt revers && grunt browser && serve -s dist
