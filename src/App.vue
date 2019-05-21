@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <p><span>JSQL AngularJS (1.6)</span> - unit testing</p>
+        <p><span>JSQL Vue (2.6.10)</span> - unit testing</p>
         <table>
             <thead>
             <th>Case</th>
