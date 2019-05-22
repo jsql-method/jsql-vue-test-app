@@ -4,7 +4,7 @@
   "scripts": {
     "serve": "concurrently --kill-others \"grunt dev\" \"vue-cli-service serve\" \"npm run jsql-watch\"",
     "jsql-watch": "jsql-cli --debug --apiKey=dawid.senko@jsql.it --input=/src/**/*.* --extensions=js,vue --devKeyFileName=test-key.key --env=local --watch",
-    "jsql-build": "jsql-cli --debug --apiKey=dawid.senko@jsql.it --output=/dist/js/app.edaa8721.js --input=/dist/js/app.edaa8721.js --devKeyFileName=test-key.key --env=local",
+    "jsql-build": "jsql-cli --debug --apiKey=dawid.senko@jsql.it --output=/dist/js/app.edaa8721.js --input=/dist/js/app.edaa8721.js --devKeyFileName=test-key.key --env=test",
     "build": "vue-cli-service build && npm run jsql-build",
     "vue-serve": "vue-cli-service serve"
   },
