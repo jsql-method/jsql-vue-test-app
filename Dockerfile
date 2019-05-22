@@ -4,11 +4,8 @@ WORKDIR /build
 
 ADD . /build
 RUN npm install && \
-    npm install -g @angular/cli grunt && \
-    grunt copy-hash && \
-    npm run build && \
-    grunt revers
-
+    npm install -g jsql-cli && \
+    npm run build
 
 FROM nginx:stable-alpine
 COPY cicd/nginx/default.conf /etc/nginx/conf.d/default.conf
