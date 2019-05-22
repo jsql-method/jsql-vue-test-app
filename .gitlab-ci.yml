@@ -14,10 +14,8 @@ stages:
   image: node:11
   before_script:
     - npm install
-    - npm install -g @angular/cli grunt
-    - grunt copy-hash
+    - npm install -g jsql-cli 
     - npm run build
-    - grunt revers
   artifacts:
     paths:
       - dist/
