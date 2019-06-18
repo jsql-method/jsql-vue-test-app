@@ -199,12 +199,13 @@ export class Cases {
                     .param('ageMin', 30)
                     .param('ageMax', 50)
                     .then(function (result) {
+
                         console.log(self.cases.names.caseName5, result.data);
 
-                        if (!jsql.isArray(result)) {
-                            resultCallback('SUCCESS');
-                        } else {
+                        if (jsql.isArray(result.data)) {
                             resultCallback('FAILED');
+                        } else {
+                            resultCallback('SUCCESS');
                         }
 
                     })
