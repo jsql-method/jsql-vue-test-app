@@ -1,4 +1,5 @@
 import JsqlService from 'jsql-axios';
+//import JsqlServiceRxJs from 'jsql-axios-rxjs';
 
 export class Cases {
 
@@ -12,18 +13,23 @@ export class Cases {
                 duration: duration,
                 caseName: caseName
             });
+
         }
     };
 
     init(reference) {
 
-        var jsqlConfig = new JsqlService({
+        var jsql = new JsqlService({
             host: window.host,
             apiKey: window.apiKey,
             devKey: window.devKey
         });
 
-        var jsql = jsqlConfig.getInstance();
+        // var jsql = new JsqlServiceRxJs({
+        //     host: window.host,
+        //     apiKey: window.apiKey,
+        //     devKey: window.devKey
+        // });
 
         console.log(jsql);
 
@@ -51,6 +57,11 @@ export class Cases {
                         surname: 'Wołyński',
                         age: 38
                     })
+                    // .observe()
+                    // .subscribe((result) => {
+                    //     console.log(self.cases.names.caseName1, result.data);
+                    //     resultCallback('SUCCESS');
+                    // })
                     .then(function (result) {
                         console.log(self.cases.names.caseName1, result.data);
                         resultCallback('SUCCESS');
@@ -101,9 +112,7 @@ export class Cases {
                 resultCallback('FAILED');
             }
 
-
         };
-
 
         self.cases.names.caseName3 = 'Update persons';
         self[self.cases.names.caseName3] = function () {
